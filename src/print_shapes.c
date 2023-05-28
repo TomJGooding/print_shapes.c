@@ -12,7 +12,8 @@ void print_square(const int width) {
 
 void print_half_square(const int width) {
     for (int row = 0; row < width; ++row) {
-        for (int col = 0; col < width - row; ++col) {
+        int shape_span = width - row;
+        for (int col = 0; col < shape_span; ++col) {
             putchar('#');
         }
         putchar('\n');
@@ -22,7 +23,8 @@ void print_half_square(const int width) {
 void print_sideways_triangle(const int width) {
     const int height = width * 2 - 1;
     for (int row = 1; row <= height; ++row) {
-        for (int col = 1; col <= width - abs(width - row); ++col) {
+        int shape_span = width - abs(width - row);
+        for (int col = 1; col <= shape_span; ++col) {
             putchar('#');
         }
         putchar('\n');
